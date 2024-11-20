@@ -4,6 +4,12 @@ FROM osrf/ros:${ROS_DISTRO}-desktop
 # Avoid prompts from apt
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Declare an ARG for setting RUN_MODE at build time (optional)
+ARG RUN_MODE=cli
+
+# Set an ENV variable based on the ARG (to make it available at runtime)
+ENV RUN_MODE=${RUN_MODE}
+
 # Ignore setup.py warnings in building phase
 ENV PYTHONWARNINGS="ignore:setup.py install is deprecated::setuptools.command.install"
 
@@ -100,3 +106,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 # Interactive bash shell
 CMD ["/bin/bash"]
+# CMD ["sleep", "infinity"]
