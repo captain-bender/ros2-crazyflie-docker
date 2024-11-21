@@ -92,7 +92,7 @@ RUN sudo chmod 777 -R /home/crazyflie_mapping_demo/ros2_ws
 WORKDIR /home/crazyflie_mapping_demo/ros2_ws
 
 # Build
-RUN . /opt/ros/humble/setup.sh \
+RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
   && colcon build --cmake-args -DBUILD_TESTING=ON
 
 # Source ROS 2 workspace setup and set environment variable for GZ_SIM_RESOURCE_PATH
