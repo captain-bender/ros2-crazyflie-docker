@@ -29,6 +29,9 @@ To stop the docker compose, you need to type:
 docker compose down
 ```
 
+## Levevl of readiness
+Not tested exhaustively. Use it on your own risk. If you discover issues, please report them.
+
 ## Environment (or it works in my machine)
 It was testes in an Ubuntu 24.04.1 LTS machine
 
